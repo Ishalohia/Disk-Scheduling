@@ -1,0 +1,104 @@
+ #body{
+  background-color: rgb(120, 101, 172);
+  background-image: linear-gradient(to bottom right, rgb(242, 246, 247), #6eccdd);
+  
+ 
+} 
+.row{padding:10px 0px;
+}
+
+.column {
+  /* border:1px solid black;
+  border-radius: 25px; */
+  float: left;
+  width: 50%;
+  padding: 15px;
+  
+}
+
+h2{
+  text-align: center;
+  padding: 10px 0px;
+  color:rgb(4, 12, 88);
+   font-family:cursive;
+ }
+.uline{
+  text-decoration-line: underline;
+  text-decoration-style: linear;
+  text-decoration-color: rgb(4, 12, 88);
+}
+p{
+    margin:10px 0px;
+    color:black;
+    font-family:'Times New Roman', Times, serif
+  
+}
+ #ul{
+  margin-left: 20px;
+  font-size:1.2rem;
+  padding: 10px 0px;
+  color:black;
+  font-family:'Times New Roman', Times, serif
+}
+
+h5{font-weight:bold;}
+
+#formula{font-family:cursive;}
+#try{
+  background-color:rgb(120, 221, 244);
+  border-radius:4px;
+font-family:sans-serif;
+}
+
+#head{font-size: 1.2rem;
+  font-family:cursive;
+}
+#a{text-decoration-line: none;
+text-decoration-color: none;
+color:rgb(4, 12, 88);
+
+}
+
+/* --------------------Graph CSS------------------ */
+
+#algorithm{
+   background-color:#e4ecec;
+  width:50%;
+}
+#direction{
+  background-color:#e4ecec; 
+  width:50%;
+}
+#plot-button{
+ margin-left: 36px; 
+ padding:10px;
+}
+#calculate{
+  margin-left: 36px; 
+ padding:10px;
+}
+
+#graph-area {
+  margin: auto;
+  height: 650px;
+  width: 1200px;
+  padding: 0;
+  border: 1px solid black;
+}
+
+#header {
+  text-align: center;
+  font-size: 40px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#alg-name {
+  font-size: 25px;
+  text-align: left;
+  font-family: Monospace;
+  font-weight: bold;
+}
+#alg-seek {
+  font-size: 20px;
+  text-align: left;
+}

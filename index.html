@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disk-Scheduling Algorithm</title>
+    <link rel="stylesheet" href="disk.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+   
+<body id="body">
+    <nav class="navbar navbar-expand-lg  bg-info navbar-lg" >
+        <a class="navbar-brand fw-bold fst-cursive fs-1" id="a" href="">Disk-Scheduling Algorithm</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto" id="list">
+            <li class="nav-item" >
+               <a class="nav-link fw-semibold"   href="index.html">About</a> 
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-semibold" href="#disk">Types</a> 
+             </li>
+            <li class="nav-item">
+                <a class="nav-link fw-semibold"  href="Simulate.html">Simulate</a> 
+             </li>
+        </ul>
+    </div>
+       </nav>
+
+
+
+       <div class="row" style="margin-right:0rem;">
+		<div class="column">
+                <div class="jumbotron" >
+                    <h2 "class="display-4"><u class="uline">Overview</u></h1>
+                    <p class="lead">Disk Scheduling Algorithm' is an algorithm that keeps and manages input and output requests arriving for the disk in a system. As we know, for executing any process memory is required. And when it comes to accessing things from a hard disk, the process becomes very slow as a hard disk is the slowest part of our computer. There are various methods by which the process can be scheduled and can be done efficiently.</p>
+                </div>
+		</div>
+        
+
+
+       <div class="row">
+		<div class="column">
+           
+                <div class="jumbotron" >
+    
+                    <h2 "class="display-4"><u class="uline">What is Disk Scheduling Algorithm ?</u></h2>
+                    <p class="lead">Disk scheduling is done by operating systems to schedule I/O requests arriving for the disk. Disk scheduling is also known as I/O scheduling.
+                        <h5>Disk scheduling is important because: </h5>
+                <ul id="ul">
+                <li>Multiple I/O requests may arrive by different processes and only one I/O request can be served at a time by the disk controller. Thus other I/O requests need to wait in the waiting queue and need to be scheduled.</li>
+                <li>Two or more request may be far from each other so can result in greater disk arm movement.</li>
+               <li> Hard drives are one of the slowest parts of the computer system and thus need to be accessed in an efficient manner.</li>
+       </ul>
+                    </p>
+                </div>
+		</div>
+        
+
+
+       <div class="row">
+    <div class="column">
+        <div class="jumbotron">
+        <h2><u class="uline">Some Important terminology</u></h2>
+        <p class="lead">
+<ul  id="ul">
+    <li><strong>Seek Time :</strong> Seek time is the time taken to locate the disk arm to a specified track where the data is to be read or write. So the disk scheduling algorithm that gives minimum average seek time is better.</li><br>
+<li><strong>Rotational Latency :</strong> The required data block needs to move at a particular position from where the read/write head can fetch the data. So, the time taken in this movement is known as "Rotational Latency". This rotational time should be as less as possible so, the algorithm that will take less time to rotate will be considered a better algorithm.</li><br>
+<li><strong>Transfer Time:</strong> When a request is made from the user side, it takes some time to fetch these data and provide them as output. This taken time is known as "Transfer Time".</li><br>
+
+<li><strong>Disk Access Time:</strong> Disk Access Time: It is defined as the total time taken by all the above processes. <br>
+    <p id="formula">[Disk access time = Seek time + Rotational latency time + Transfer time]</p></li>
+   
+</ul></p></div>
+</div>
+</div>
+
+
+<div class="row">
+        <div class="column">
+            <div class="jumbotron">
+           <h2 id="disk"><u class="uline">Types of Disk-Scheduling Algorithm</u></h2>
+            <p class="lead">
+                <ol id="head">
+                    <li><a href="#fcfs" id="a">FCFS disk scheduling algorithm</a></li>
+                    <li><a href="#sstf" id="a">SSTF disk scheduling algorithm</a></li>
+                    <li><a href="#scan" id="a">SCAN disk scheduling algorithm</a></li>
+                    <li><a href="#c-scan" id="a">C-SCAN disk scheduling algorithm</a></li>
+                    <li><a href="#look" id="a">LOOK disk scheduling algorithm</a></li>
+                    <li><a href="#c-look" id="a">C-LOOK disk scheduling algorithm</a></li>
+                </ol>
+    <ul id="ul">
+       
+        <li id="fcfs"> <h4><strong>FCFS disk scheduling algorithm</strong></h4> It stands for <strong><em>first-come-first-serve</em></strong>. As the name suggests, the request which comes first will be processed first and so on. The requests coming to the disk are arranged in a proper sequence as they arrive. Since every request is processed in this algorithm, so there is no chance of 'starvation'.
+            <br><strong>Advantages: </strong><br>
+           1- Implementation is easy.<br>
+           2- No chance of starvation.<br>
+    
+           <strong> Disadvantages:</strong><br>
+           1- 'Seek time' increases.<br>
+           2- Not so efficient.<br>
+            <br>
+            <strong>Example: </strong>Suppose a disk having 200 tracks (0-199). The request sequence(82, 170, 43, 140, 24, 16, 190) of disk are shown as in the given figure and the head start is at request 50.<br>
+           <strong>Solution: </strong> We can see the head starts at position 50 and moves to request 82. After serving them the disk arm moves towards the second request that is 170 and then to the request 43 and so on. In this algorithm,, the disk arm will serve the requests in arriving order. In this way, all the requests are served in arriving order until the process executes.<br>"Seek time" will be calculated by adding the head movement differences of all the requests:<br>
+<em>Seek time= "(82-50) + (170-82) + (170-43) + (140-43) + (140-24) + (24-16) + (190-16) = 642 </em></li>
+<br><a href="Simulate.html"><button type="button" id="try">Go to simulate page</button></a>
+<br>
+<br>
+
+
+<li id="sstf"><h4><strong>SSTF disk scheduling algorithm</strong></h4>It stands for <strong><em>Shortest seek time first</em></strong>. As the name suggests, it searches for the request having the least 'seek time' and executes them first. This algorithm has less 'seek time' as compared to FCFS Algorithm.<br>
+    <strong>Advantages: </strong><br>
+    1- In this algorithm, disk response time is less.<br>
+2- More efficient than FCFS.<br>
+<strong> Disadvantages:</strong><br>
+1- Less speed of algorithm execution.<br>
+2- Starvation can be seen.<br>
+<br>
+<strong>Example: </strong> Suppose a disk having 200 tracks (0-199). The request sequence(82, 170, 43, 140, 24, 16, 190) are shown in the given figure and the head position is at 50.
+<br><strong>Solution: </strong>The disk arm searches for the request which will have the least difference in head movement. So, the least difference is (50-43). Here the difference is not about the shortest value but it is about the shortest time the head will take to reach the nearest next request. So, after 43, the head will be nearest to 24, and from here the head will be nearest to the request 16, After 16, the nearest request is 82, so the disk arm will move to serve request 82 and so on.
+
+<br>Hence, Calculation of <em> Seek Time = (50-43) + (43-24) + (24-16) + (82-16) + (140-82) + (170-140) + (190-170) = 208</em>
+<br>
+<br><a href="Simulate.html"><button type="button" id="try">Go to simulate page</button></a>
+<br>
+<br>
+</li>
+
+<li id="scan"><h4><strong>SCAN disk scheduling algorithm</strong></h4>In this algorithm, the head starts to scan all the requests in a direction and reaches the end of the disk. After that, it reverses its direction and starts to scan again the requests in its path and serves them. Due to this feature, this algorithm is also known as the <strong><em>Elevator Algorithm.</em></strong><br>
+    <strong>Advantages: </strong><br>
+    1- Implementation is easy.<br>
+    2- Requests do not have to wait in a queue.<br>
+    <strong> Disadvantages:</strong><br>
+1- The head keeps going on to the end even if there are no requests in that direction.<br>
+<br>
+<strong>Example: </strong> Suppose a disk having 200 tracks (0-199). The request sequence(82,170,43,140,24,16,190) are shown in the given figure and the head position is at 50. The 'disk arm' will first move to the larger values.<br>
+<strong>Solution: </strong> In the above image, we can see that the disk arm starts from position 50 and goes in a single direction until it reaches the end of the disk i.e.- request position 199. After that, it reverses and starts servicing in the opposite direction until reached the other end of the disk. This process keeps going on until the process is executed.<br>
+ Hence, Calculation of 'Seek Time' will be like: <em> Seek time = (199-50) + (199-16) =332</em><br>
+<br><a href="Simulate.html"><button type="button" id="try">Go to simulate page</button></a>
+<br>
+<br>
+</li>
+<li id="c-scan"><h4><strong>C-SCAN disk scheduling algorithm</strong></h4>
+    It stands for <strong><em>Circular-Scan</em></strong>. This algorithm is almost the same as the Scan disk algorithm but one thing that makes it different is that 'after reaching the one end and reversing the head direction, it starts to come back. The disk arm moves toward the end of the disk and serves the requests coming into its path. After reaching the end of the disk it reverses its direction and again starts to move to the other end of the disk but while going back it does not serve any requests.<br>
+    <strong>Advantages: </strong><br>
+    1- The waiting time is uniformly distributed among the requests.<br>
+    2- Response time is good in it.<br>
+    <strong> Disadvantages:</strong><br>
+    1- The time taken by the disk arm to locate a spot is increased here.<br>
+2- The head keeps going to the end of the disk.<br>
+<br>
+<strong>Example: </strong> Suppose a disk having 200 tracks (0-199). The request sequence(82,170,43,140,24,16,190) are shown in the given figure and the head position is at 50.
+<br><strong>Solution: </strong> the disk arm starts from position 50 and reached the end(199), and serves all the requests in the path. Then it reverses the direction and moves to the other end of the disk i.e.- 0 without serving any task in the path. After reaching 0, it will again go move towards the largest remaining value which is 43. So, the head will start from 0 and moves to request 43 serving all the requests coming in the path. And this process keeps going.<br>
+Hence, Seek Time will be: <em> Seek time: (199-50) + (199-0) + (43-0) =391</em><br>
+    <br><a href="Simulate.html"><button type="button" id="try">Go to simulate page</button></a>
+    <br>
+    <br>
+</li>
+
+<li id="look"><h4><strong>LOOK disk scheduling algorithm</strong></h4>In this algorithm, the disk arm moves to the 'last request' present and services them. After reaching the last requests, it reverses its direction and again comes back to the starting point. It does not go to the end of the disk, in spite, it goes to the end of requests.<br>
+    <strong>Advantages: </strong><br>
+    1- Starvation does not occur.<br>
+2- Since the head does not go to the end of the disk, the time is not wasted here.<br>
+<strong> Disadvantages:</strong><br>
+1- The arm has to be conscious to find the last request.<br>
+<br>
+<strong>Example: </strong> A disk having 200 tracks (0-199). The request sequence(82,170,43,140,24,16,190) are shown in the given figure and the head position is at 50.<br>
+<strong>Solution: </strong> The disk arm is starting from 50 and starts to serve requests in one direction only but in spite of going to the end of the disk, it goes to the end of requests i.e.-190. Then comes back to the last request of other ends of the disk and serves them. And again starts from here and serves till the last request of the first side. Hence,<br> <em>Seek time =(190-50) + (190-16) =314</em><br>
+    <br>
+    <a href="Simulate.html"><button type="button" id="try">Go to simulate page</button></a>
+    <br>
+    <br>
+</li>
+
+<li id="c-look"><h4><strong>C-LOOK disk scheduling algorithm</strong></h4>The C-Look algorithm is almost the same as the Look algorithm. The only difference is that after reaching the end requests, it reverses the direction of the head and starts moving to the initial position. But in moving back, it does not serve any requests.<br>
+    <strong>Advantages: </strong><br>
+    1- The waiting time is decreased.<br>
+    2- If there are no requests till the end, it reverses the head direction immediately.<br>
+    3- Starvation does not occur.<br>
+    4- The time taken by the disk arm to find the desired spot is less.<br>
+    <strong> Disadvantages:</strong><br>
+   1- The arm has to be conscious about finding the last request.<br>
+<br>
+<strong>Example: </strong>Suppose a disk having 200 tracks (0-199). The request sequence(82,170,43,140,24,16,190) are shown in the given figure and the head position is at 50.<br>
+<strong>Solution: </strong>The disk arm is starting from 50 and starts to serve requests in one direction only but in spite of going to the end of the disk, it goes to the end of requests i.e.-190. Then comes back to the last request of other ends of a disk without serving them. And again starts from the other end of the disk and serves requests of its path. Hence, <br>
+<em>Seek Time = (190-50) + (190-16) + (43-16) =341</em><br><br>
+<a href="Simulate.html"><button type="button" id="try">Go to simulate page</button></a>
+    <br>
+    <br>
+</li>
+    </ul>
+</p>
+</div>
+    </div>
+    </div>
+
+    <script src="myscript.js"></script>
+</body>
+</html>
